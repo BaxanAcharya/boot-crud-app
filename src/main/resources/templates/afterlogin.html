@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User View</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+</head>
+<body>
+
+<a href="deleteall" class="btn btn-primary btn-block"> Delete All</a>
+
+Welcome: <div th:text="${usersession}"></div>
+
+<div th:if="${not #lists.isEmpty(users)}">
+<h2>User List</h2>
+<table class="glyphicon glyphicon-calendar table">
+<tr>
+<th>Id</th>
+<th>Username</th>
+<th>Password</th>
+<th>Action</th>
+</tr>
+<tr th:each="person : ${users}">
+<td th:text="${person.id}"></td>
+<td th:text="${person.username}"></td>
+<td th:text="${person.password}"></td>
+<td><a th:href="@{'/deletebyid/' + ${person.id}}" class="btn btn-default">Delete</a><a th:href="@{'/selectbyid/' + ${person.id}}" class="btn btn-default">Edit</a></td>
+</tr>
+</table>
+</div>
+
+</body>
+
+ <script type="text/javascript" th:src="@{/js/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</html>

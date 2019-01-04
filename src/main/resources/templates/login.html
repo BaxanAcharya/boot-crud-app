@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login User</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+</head>
+<body>
+<h1>Login User</h1>
+
+<form action="#" th:action="@{/loginuser}" th:object="${user}" method="post">
+<p>Username: <input type="text" name="username"/></p>
+<p>Password: <input type="password" name="password"/></p>
+<p><input type="submit" value="Login"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+
+ <script type="text/javascript" th:src="@{/js/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Edit User</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+</head>
+<body>
+<h1>New User</h1>
+<form action="#" th:action="@{/editUser}" th:object="${user}" method="post">
+<input type="hidden" name="id" th:value="${userById.id}"/>
+<p>Username: <input type="text" name="username" th:value="${userById.username}"/></p>
+<p>Password: <input type="text" name="password" th:value="${userById.password}"/></p>
+<p><input type="submit" value="Update"/> <input type="reset" value="Reset"/></p>
+</form>
+
+</body>
+
+ <script type="text/javascript" th:src="@{/js/jquery.min.js/}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+</html>
